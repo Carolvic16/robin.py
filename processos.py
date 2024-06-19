@@ -1,3 +1,5 @@
+# CLASSE DO PROCESSO (feito pela vic)
+
 def criar_array(tamanho):
     array = []
     for i in range(tamanho):
