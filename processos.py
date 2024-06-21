@@ -1,23 +1,22 @@
 # CLASSE DO PROCESSO (feito pela vic)
 
-def criar_array(tamanho):
-    array = []
-    for i in range(tamanho):
-        valor = float(input(f"Entre com o valor da tarefa {i+1}: "))
-        array.append(valor)
-    return array
+from Main import Main
 
-# Definir o tamanho do array
-tarefas = int(input("Entre com a quantidade de processos: "))
+class Processos: 
+    def __init__(self,P1,P2,P3,P4):
+        self.P1 = P1
+        self.P2 = P2
+        self.P3 = P3
+        self.P4 = P4
 
-# Criar o array com os valores do usuário
-meu_array = criar_array(tarefas)
+    def setP1 (self, P1):
+        self.P1 =  5
 
-# Adicionar o último número ao array e estender a lista com esse número
-if meu_array:
-    ultimo_valor = meu_array[-1]
-    meu_array.append(ultimo_valor)  # Adiciona o último número
-    meu_array.extend([ultimo_valor])  # Estende a lista com o último número
+    def setP2 (self, P2):
+        self.P2 =  7    
 
-# Exibir o array
-print("Os valores do array são:", meu_array)
+    def setP3 (self, P3):
+        self.P3 =  9
+
+    def setP1 (self, P4):
+        self.P4 =  10      
