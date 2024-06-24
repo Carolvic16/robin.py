@@ -1,5 +1,3 @@
-# main.py
-
 from Processos import Processos
 import time
 
@@ -17,28 +15,23 @@ def escalonador(processos, tempo_de_quantum):
             time.sleep(tempo_restante)
             print(f'Processo {processo_atual} finalizado')
 
-# Criando uma instância da classe Processos
-processos_obj = Processos()
+# Lendo processos de um arquivo txt
+def ler_processos_do_arquivo(nome_do_arquivo):
+    processos = []
+    with open(nome_do_arquivo, 'r') as file:
+        for linha in file:
+            processo_id, tempo = linha.strip().split(',')
+            processos.append((processo_id, int(tempo)))
+    return processos
 
-# Definindo os tempos de execução para cada processo
-tempos_processos = {
-    "P1": 5,
-    "P2": 7,
-    "P3": 9,
-    "P4": 10
-}
+# Nome do arquivo de processos
+nome_do_arquivo = 'processos.txt'
 
-# Chamando os métodos para iniciar os processos com os tempos específicos
-processos_obj.setP1(tempos_processos["P1"])
-processos_obj.setP2(tempos_processos["P2"])
-processos_obj.setP3(tempos_processos["P3"])
-processos_obj.setP4(tempos_processos["P4"])
+# Lendo processos do arquivo
+fila_de_processos = ler_processos_do_arquivo(nome_do_arquivo)
 
-# Esperando um tempo suficiente para os processos serem adicionados à fila
-time.sleep(1)
-
-# Obtendo a fila de processos atual como uma lista
-fila_de_processos = processos_obj.get_fila_de_processos()
+# Definindo o tempo de quantum (ajustar conforme necessário)
+tempo_de_quantum = 5
 
 # Executando o escalonador com a fila de processos
-escalonador(fila_de_processos, 5)
+escalonador(fila_de_processos, tempo_de_quantum)
