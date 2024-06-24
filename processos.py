@@ -6,7 +6,7 @@ import threading
 # Define a função que simula um processo com um ID e uma fila.
 def quantum(process_id, deque, tempo):
     deque.append((process_id, tempo))
-    print(f'Processo {process_id} adicionado à fila com {tempo} segundos restantes ')
+    print(f' Processo {process_id} adicionado à fila com {tempo} segundos restantes ')
     
 class Processos:
     def __init__(self):
