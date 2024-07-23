@@ -13,3 +13,4 @@ def escalonador(processos, tempo_de_quantum):
             print(f'Executando Processo {processo_atual} por {tempo_restante} segundos')
             time.sleep(tempo_restante)
             print(f'Processo {processo_atual} finalizado')
+

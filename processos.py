@@ -12,22 +12,10 @@ class Processos:
     def __init__(self):
         self.fila_de_processos = deque()
 
-    def setP1(self, tempo):
-        t1 = threading.Thread(target=quantum, args=(1, self.fila_de_processos, tempo))
-        t1.start()
-        print(f'Thread para P1 iniciada com tempo de {tempo} segundos')
+    def pronto(sefl, tempo): 
+        
 
-    def setP2(self, tempo):
-        t2 = threading.Thread(target=quantum, args=(2, self.fila_de_processos, tempo))
-        t2.start()
-        print(f'Thread para P2 iniciada com tempo de {tempo} segundos')
-
-    def setP3(self, tempo):
-        t3 = threading.Thread(target=quantum, args=(3, self.fila_de_processos, tempo))
-        t3.start()
-        print(f'Thread para P3 iniciada com tempo de {tempo} segundos')
-
-    def setP4(self, tempo):
+    def D(self, tempo):
         t4 = threading.Thread(target=quantum, args=(4, self.fila_de_processos, tempo))
         t4.start()
         print(f'Thread para P4 iniciada com tempo de {tempo} segundos')

@@ -1,7 +1,8 @@
 # main.py
 
-from Processos import Processos
+from processos import Processos
 from escalonador import escalonador
+from ler import ler
 import time
 
 # Criando uma instância da classe Processos
@@ -9,17 +10,17 @@ processos_obj = Processos()
 
 # Definindo os tempos de execução para cada processo
 tempos_processos = {
-    "P1": 5,
-    "P2": 7,
-    "P3": 9,
-    "P4": 10
+    "A": 5,
+    "B": 7,
+    "C": 9,
+    "D": 10
 }
 
 # Chamando os métodos para iniciar os processos com os tempos específicos
-processos_obj.setP1(tempos_processos["P1"])
-processos_obj.setP2(tempos_processos["P2"])
-processos_obj.setP3(tempos_processos["P3"])
-processos_obj.setP4(tempos_processos["P4"])
+processos_obj.A(tempos_processos["A"])
+processos_obj.B(tempos_processos["B"])
+processos_obj.C(tempos_processos["C"])
+processos_obj.D(tempos_processos["D"])
 
 # Esperando um tempo suficiente para os processos serem adicionados à fila
 time.sleep(1)
