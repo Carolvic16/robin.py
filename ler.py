@@ -1,27 +1,21 @@
-import re
-
-# Abrir o arquivo para leitura
-ler = open("Teste.txt", "r")
-
-# Ler todas as linhas do arquivo e processá-las
-linha = ler.readline()
-while linha != "":
-  # Imprimir a linha atual
-  print(linha.strip())  # .strip() remove espaços em branco no início e no fim da linha
-
-  # Dividir a linha em ID do processo e instruções
-  # Supondo que o ID tenha sempre 3 caracteres e o restante são instruções
-  id_processo = linha[:3]
-  instrucoes = linha[3:]
+def ler_arquivo(nome_arquivo):
+    processos = []
+    with open('test.txt', 'r') as arquivo:
+        linha = arquivo.readline()
+        while linha:
+            linha = linha.strip()
+            id_processo = linha[:3]
+            instrucoes = linha[3:]
+            processos.append((id_processo, instrucoes))
+            print(f"Processo adicionado: ID = {id_processo}, Instruções = {instrucoes}")  # Debug print
+            linha = arquivo.readline()
+    print(f"Total de processos lidos: {len(processos)}")  # Debug print
+    return processos
+    processos.close()
   
-  # Imprimir ID do processo e instruções (apenas para verificação)
-  print(f"ID do processo: {id_processo}")
-  print(f"Instruções: {instrucoes}")
-  
-  # Ler a próxima linha
-  linha = ler.readline()
 
-# Fechar o arquivo
-ler.close()
+
+
+
 
 
