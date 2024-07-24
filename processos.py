@@ -1,3 +1,9 @@
+#Grupo: 
+#ANDRÉ LYRA FERNANDES
+#MARIANA PEIXOTO CHAHUD
+#LARISSA  GABRIELA SANT´ANGELO DIAS
+#VICTÓRIA CAROLINA FERREIRA DA SILVA
+
 class Processos:
     def __init__(self):
         self.fila = []

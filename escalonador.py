@@ -1,3 +1,10 @@
+#Grupo: 
+#ANDRÉ LYRA FERNANDES
+#MARIANA PEIXOTO CHAHUD
+#LARISSA  GABRIELA SANT´ANGELO DIAS
+#VICTÓRIA CAROLINA FERREIRA DA SILVA
+
+
 def escalonador(fila_de_processos, quantum):
     tempos_processos = {
         "A": 5,
@@ -7,7 +14,7 @@ def escalonador(fila_de_processos, quantum):
     }
 
     # Dicionário para controlar o número de reencaminhamentos de cada processo
-    max_reencaminhamentos = 10
+    max_reencaminhamentos = 5
     reencaminhamentos = {}
 
     while fila_de_processos:
@@ -18,18 +25,21 @@ def escalonador(fila_de_processos, quantum):
         if id_processo not in reencaminhamentos:
             reencaminhamentos[id_processo] = 0
 
-        print(f"Entrada de processo no processador: Processo {id_processo}")
-
+        print(f"Entrada de processo no processador: Processo {id_processo} \n")
+        tempo_total = 0
         instrucoes_restantes = []
         for instrucao in instrucoes:
             tempo_instrucao = tempos_processos[instrucao]
             while tempo_instrucao > 0:
                 if tempo_instrucao <= quantum:
                     print(f"Processando {instrucao} do processo {id_processo} por {tempo_instrucao} segundos")
+                    tempo_total += tempo_instrucao
                     tempo_instrucao = 0
                 else:
-                    print(f"Processando {instrucao} do processo {id_processo} por {quantum} segundos")
+                    print(f"Processando {instrucao} do processo {id_processo} por {quantum} segundos ")
+                    tempo_total += quantum
                     tempo_instrucao -= quantum
                     instrucoes_restantes.append(instrucao)
-                    break  # Sai do loop para passar para a próxima instrução
+        print(f'Tempo total para finalização do processo {id_processo}: {tempo_total} \n') 
+
 
